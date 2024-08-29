@@ -31,3 +31,55 @@ const convertCelsiusToFarenheit = function (temperature) {
 const temperatureInFahrenheit = convertCelsiusToFarenheit(90);
 console.log("Hasil konversi: ", temperatureInFahrenheit);
 
+// Perbedaan lainnya dari function expression ialah 
+// tidak memiliki hoisting padanya sehingga kita tidak dapat memanggil 
+// atau menjalankan function ini sebelum dideklarasikan.
+
+// Jika ada bahasa pemrograman yang mengatakan bahwa function dapat diperlakukan
+// layaknya variable, function tersebut dinyatakan sebagai first-class citizen.
+// Apa maksudnya dari perilaku yang mirip variable?
+// Pada Javascript function dapat kita jadikan sebagai nilai dan disimpan dalam variable,
+// nilai argument function lain, mengembalikan nilai function dari suatu function, mari kita lihat contohnya.
+
+function multiply(a, b, c) {
+    return (a * b) * c;
+}
+
+function calculate(operation, numA, numB, numC) {
+    return operation(numA, numB, numC);
+}
+
+const result1 = calculate(multiply, 2, 4, 2);
+console.log(result1);
+
+// Kita memiliki program kalkulator sederhana, Berdasarkan contoh program di atas,
+// kita punya dua fucntion. function multiply untuk melakukan operasi perkalian,
+// sedangkan calculate sebagai function utama yang perlu dijalankan jika ingin
+// melakukan proses aritmatika tiga angka.
+//
+// Identifier function multiply kita jadikan sebagai nilai argument pertama dari 
+// calculate saat pemanggilannya. Artinya parameter operation akan bernilai dari
+// function multiply. Oleh karena itu, kita bisa melakukan invoke(menajalankan)
+// parameter tersebut layaknya function.
+//
+
+// Bagaimana dengan mengembalikan nilai function dari suatu function?
+function multiplier(x) {
+    return function (num) {
+        return x * num;
+    };
+}
+
+const double = multiplier(2);
+const triple = multiplier(3);
+
+console.log(double(10));
+console.log(triple(11));
+
+// Rangkuman mengenai function sebagai first-class citizen dalam beberapa
+// keuntungan berikut:
+// Dapat disimpan sebagai nilai dalam variable
+// Dapat dikembalikan dari suatu function
+// Dapat dikirimkab sebagai parameter bagi function lain
+// Dapat disimpan dalam element array dan object literal
+// Dapat memiliki method dan properties sendiri
