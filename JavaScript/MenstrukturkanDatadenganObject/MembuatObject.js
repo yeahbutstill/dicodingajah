@@ -1,3 +1,8 @@
+// Ada berbagai cara untuk membuat object seperti menggunakan object constructor
+// atau yang paling mudah adalah dengan menggunakan object literals.
+// Membuat object dengan object literals sangat mudah
+// yaitu cukup dengan menuliskan kurung kurawal {}
+
 // Object Literals
 const user = {};
 const products = {name: "Sepatu", price: "23000"};
@@ -13,11 +18,13 @@ console.log(products);
 // dapat bernilai tipe data apa pun, seperti string, number, atau boolean.
 // Properti yang ada di dalam object dipisahkan oleh koma (,)
 
-const userTemp = { name : "Dicoding", "Last Name" : "Indonesia", age : 9};
+const userTemp = { name : "Dicoding", 
+    "Last Name" : "Indonesia", 
+    age : 9,
+};
 console.log(userTemp);
 
 // Anda bisa mencetak variable menggunakan console.log untuk melihat bentuk object jika ditampilkan pada console
-//
 
 // Kenapa kita menambahkan koma pada properti terakhir?
 // Tujuannya adalah mempermudah kita untuk membacanya dan menghindari error
